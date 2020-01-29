@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="shude_laximo.laximo" class="shude\Laximo\Laximo">
+            <argument type="service" id="shude_laximo.soap.client" />
+            <argument type="service" id="shude_laximo.query.builder" />
+        </service>
+
+        <service id="shude\Laximo\Laximo" alias="shude_laximo.laximo"/>
+
+        <service id="shude_laximo.basic.credentials" class="shude\Laximo\Client\BasicCredentials" />
+        <service id="shude\Laximo\Client\BasicCredentials" alias="shude_laximo.basic.credentials" />
+
+        <service id="shude_laximo.soap.client" class="shude\Laximo\Client\SoapClient">
+            <argument type="service" id="shude_laximo.basic.credentials" />
+        </service>
+        <service id="shude\Laximo\Client\SoapClient" alias="shude_laximo.soap.client" />
+
+        <service id="shude_laximo.query.builder" class="shude\Laximo\Query\QueryBuilder" />
+        <service id="shude\Laximo\Query\QueryBuilder" alias="shude_laximo.query.builder"/>
+
+    </services>
+</container>

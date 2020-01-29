@@ -1,0 +1,24 @@
+{
+  "name": "shude/laximo-bundle",
+  "description": "Work with Laximo PHP Api library",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vladimir Tarkhanov",
+      "email": "v@kekx.ru"
+    }
+  ],
+
+  "minimum-stability": "stable",
+  "require": {
+    "php" : "^7.2",
+    "shude/laximo" : "1.0.*"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "shude\\LaximoBundle\\": "/"
+    }
+  }
+}
